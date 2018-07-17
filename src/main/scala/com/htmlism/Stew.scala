@@ -52,4 +52,14 @@ case class Stew(ingredients: List[Ingredient]) {
     common.count(_.kind == kind) + rainbows
 
   def quality = ingredients.map(_.quality).sum
+
+  def gravity =
+    ingredients
+      .groupBy(identity)
+      .mapValues(_.size)
+      .toSeq
+      .sortBy(_._2)
+      .reverse
+      .map { case (i, n) => i + " x" + n }
+      .mkString(", ")
 }

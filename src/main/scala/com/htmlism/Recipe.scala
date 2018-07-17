@@ -19,6 +19,7 @@ object Recipe {
       Recipe("fire",     s => s.count(Mushroom) >= 3 && s.count(Red)      >= 1 ),
       Recipe("electric", s => s.count(Soft)     >= 4 && s.count(Yellow)   >= 3 ),
       Recipe("fighting", s => s.count(Sweet)    >= 3 && s.count(Mushroom) >= 2 ),
+      Recipe("mulligan", _ => true),
     )
 }
 

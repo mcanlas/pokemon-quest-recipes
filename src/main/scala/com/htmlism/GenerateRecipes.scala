@@ -28,6 +28,9 @@ case object VeryGood extends Quality
 case object Special  extends Quality
 
 object Quality {
+  val all: List[Quality] =
+    List(Basic, Good, VeryGood, Special)
+
   def apply(n: Int): Quality =
     if (n < 6)
       Basic

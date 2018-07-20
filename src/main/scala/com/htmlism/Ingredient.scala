@@ -4,12 +4,12 @@ object Ingredient {
   val all: Seq[Ingredient] =
     Seq(
       TinyMushroom,
-      BigRoot,
       BlukBerry,
-      IcyRock,
       Apricorn,
-      Honey,
       Fossil,
+      BigRoot,
+      IcyRock,
+      Honey,
       BalmMushroom,
       RainbowMatter,
       MysticalShell)

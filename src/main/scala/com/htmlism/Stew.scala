@@ -51,9 +51,9 @@ case class Stew(ingredients: List[Ingredient]) {
   def count(kind: Kind): Int =
     common.count(_.kind == kind) + rainbows
 
-  def quality = ingredients.map(_.quality).sum
+  def quality: Int = ingredients.map(_.quality).sum
 
-  def gravity =
+  def gravity: String =
     ingredients
       .groupBy(identity)
       .mapValues(_.size)

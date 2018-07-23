@@ -24,26 +24,28 @@ object GenerateWebPage {
         .groupBy(recipe)
 
     for (r <- Recipe.all) {
-      val stewsByQuality =
-        stewsByRecipe(r.name)
-          .groupBy(quality)
+      for (ss <- stewsByRecipe.get(r.name)) {
+        val stewsByQuality =
+          ss
+            .groupBy(quality)
 
-      for (q <- Quality.all) {
-        out.println
-        out.println(s"<h1>${r.name} : $q</h1>")
+        for (q <- Quality.all) {
+          out.println
+          out.println(s"<h1>${r.name} : $q</h1>")
 
-        stewsByQuality.get(q) match {
-          case Some(xs) =>
-            out.println("<ul>")
-            xs.foreach(x => out.println(s"<li>${x.gravity}</li>"))
-            out.println("</ul>")
+          stewsByQuality.get(q) match {
+            case Some(xs) =>
+              out.println("<ul>")
+              xs.foreach(x => out.println(s"<li>${x.gravity}</li>"))
+              out.println("</ul>")
 
-          case None =>
-            out.println("(no recipes possible)")
+            case None =>
+              out.println("(no recipes possible)")
+          }
         }
-      }
 
-      out.println("<hr>")
-   }
+        out.println("<hr>")
+      }
+    }
   }
 }

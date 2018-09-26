@@ -19,9 +19,10 @@ object Bag {
 }
 
 class Bag[A](protected val xs: Seq[A]) {
+
   /**
-   * For console output only.
-   */
+    * For console output only.
+    */
   override def toString: String =
     "Bag(" + xs.mkString(", ") + ")"
 }

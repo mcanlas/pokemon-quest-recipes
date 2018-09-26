@@ -11,7 +11,9 @@ object Stew {
     generate(length, maxCount, Seq(Array[Int]()))
 
   @tailrec
-  def generate(length: Int, maxCount: Int, many: Seq[Array[Int]]): Seq[Array[Int]] =
+  def generate(length: Int,
+               maxCount: Int,
+               many: Seq[Array[Int]]): Seq[Array[Int]] =
     if (length == 0)
       many
     else {
@@ -20,7 +22,7 @@ object Stew {
           (0 until maxCount)
             .map(Array.apply(_))
         else {
-          val last = xs.last
+          val last        = xs.last
           val newElements = (0 until maxCount).filter(_ >= last)
 
           newElements

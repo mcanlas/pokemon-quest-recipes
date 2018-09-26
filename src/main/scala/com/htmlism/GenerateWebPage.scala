@@ -19,15 +19,13 @@ object GenerateWebPage {
 
   def print(out: PrintWriter): Unit = {
     val stewsByRecipe =
-      Stew
-        .generate
+      Stew.generate
         .groupBy(recipe)
 
     for (r <- Recipe.all) {
       for (ss <- stewsByRecipe.get(r.name)) {
         val stewsByQuality =
-          ss
-            .groupBy(quality)
+          ss.groupBy(quality)
 
         for (q <- Quality.all) {
           out.println

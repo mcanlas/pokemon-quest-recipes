@@ -5,17 +5,16 @@ import scalaz.Scalaz.intInstance
 
 object Ingredient {
   val all: Seq[Ingredient] =
-    Seq(
-      TinyMushroom,
-      BlukBerry,
-      Apricorn,
-      Fossil,
-      BigRoot,
-      IcyRock,
-      Honey,
-      BalmMushroom,
-      RainbowMatter,
-      MysticalShell)
+    Seq(TinyMushroom,
+        BlukBerry,
+        Apricorn,
+        Fossil,
+        BigRoot,
+        IcyRock,
+        Honey,
+        BalmMushroom,
+        RainbowMatter,
+        MysticalShell)
 
   // for some reason, providing `Order[Ingredient]` is not enough to power `TinyMushroom === TinyMushroom`
   // but this does work `(TinyMushroom: Ingredient) === TinyMushroom`
@@ -32,23 +31,23 @@ sealed trait Ingredient {
 
 case object RainbowMatter extends Ingredient {
   val quality = 3
-  val order = 9
+  val order   = 9
 }
 
 case object MysticalShell extends Ingredient {
   val quality = 4
-  val order = 10
+  val order   = 10
 }
 
-abstract class CommonIngredient(
-    val order: Int,
-    val color: Color,
-    val hardness: Hardness,
-    val size: Size,
-    val kind: Kind) extends Ingredient {
+abstract class CommonIngredient(val order: Int,
+                                val color: Color,
+                                val hardness: Hardness,
+                                val size: Size,
+                                val kind: Kind)
+    extends Ingredient {
   def quality: Int =
     size match {
-      case Small => 1
+      case Small    => 1
       case Precious => 2
     }
 }
@@ -77,6 +76,7 @@ case object Mineral  extends Kind
 case object Mushroom extends Kind
 case object Plant    extends Kind
 
+// format: off
 case object TinyMushroom extends CommonIngredient(1, Red,    Soft, Small,    Mushroom)
 case object BigRoot      extends CommonIngredient(5, Red,    Soft, Precious, Plant)
 case object BlukBerry    extends CommonIngredient(2, Blue,   Soft, Small,    Sweet)
@@ -85,3 +85,4 @@ case object Apricorn     extends CommonIngredient(3, Yellow, Hard, Small,    Pla
 case object Honey        extends CommonIngredient(7, Yellow, Soft, Precious, Sweet)
 case object Fossil       extends CommonIngredient(4, Grey,   Hard, Small,    Mineral)
 case object BalmMushroom extends CommonIngredient(8, Grey,   Soft, Precious, Mushroom)
+// format: on

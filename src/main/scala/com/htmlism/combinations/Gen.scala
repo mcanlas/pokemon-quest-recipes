@@ -5,11 +5,11 @@ object Gen {
     Alt(xs.toList.map(Atom.apply))
 
   def cat[A](x: A, xs: A*): Gen[A] =
-    xs.foldLeft(Atom(x) : Gen[A])((acc, z) => Product(acc, Atom(z)))
+    xs.foldLeft(Atom(x): Gen[A])((acc, z) => Product(acc, Atom(z)))
 }
 
 sealed trait Gen[A] {
-  def * (that: Gen[A]): Product[A] =
+  def *(that: Gen[A]): Product[A] =
     Product(this, that)
 
   def gen: List[List[A]]

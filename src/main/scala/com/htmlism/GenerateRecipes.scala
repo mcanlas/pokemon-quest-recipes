@@ -3,12 +3,12 @@ package com.htmlism
 object GenerateRecipes {
   val tups =
     Stew.generate.map { s =>
-      val recipe = Classifier.classify(s, Recipe.all).headOption.getOrElse("mulligan")
+      val recipe =
+        Classifier.classify(s, Recipe.all).headOption.getOrElse("mulligan")
       val quality = Quality(s.quality)
 
       (s, recipe, quality)
     }
-
 
   def main(args: Array[String]): Unit = {
     for (s <- Stew.generate) {

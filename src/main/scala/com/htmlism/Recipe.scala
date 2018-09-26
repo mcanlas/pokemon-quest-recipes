@@ -3,6 +3,7 @@ package com.htmlism
 object Recipe {
   val all: List[Recipe] =
     List(
+      // format: off
       Recipe("red",      _.count(Red)    >= 4),
       Recipe("blue",     _.count(Blue)   >= 4),
       Recipe("yellow",   _.count(Yellow) >= 4),
@@ -21,6 +22,7 @@ object Recipe {
       Recipe("fighting", s => s.count(Sweet)    >= 3 && s.count(Mushroom) >= 2 ),
       Recipe("mystical", s => s.count(MysticalShell) >= 4),
       Recipe("mulligan", _ => true),
+      // format: on
     )
 }
 

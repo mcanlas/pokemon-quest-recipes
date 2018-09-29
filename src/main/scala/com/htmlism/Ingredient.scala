@@ -5,16 +5,7 @@ import scalaz.Scalaz.intInstance
 
 object Ingredient {
   val all: Seq[Ingredient] =
-    Seq(TinyMushroom,
-        BlukBerry,
-        Apricorn,
-        Fossil,
-        BigRoot,
-        IcyRock,
-        Honey,
-        BalmMushroom,
-        RainbowMatter,
-        MysticalShell)
+    Seq(TinyMushroom, BlukBerry, Apricorn, Fossil, BigRoot, IcyRock, Honey, BalmMushroom, RainbowMatter, MysticalShell)
 
   // for some reason, providing `Order[Ingredient]` is not enough to power `TinyMushroom === TinyMushroom`
   // but this does work `(TinyMushroom: Ingredient) === TinyMushroom`

@@ -11,9 +11,7 @@ object Stew {
     generate(length, maxCount, Seq(Array[Int]()))
 
   @tailrec
-  def generate(length: Int,
-               maxCount: Int,
-               many: Seq[Array[Int]]): Seq[Array[Int]] =
+  def generate(length: Int, maxCount: Int, many: Seq[Array[Int]]): Seq[Array[Int]] =
     if (length == 0)
       many
     else {

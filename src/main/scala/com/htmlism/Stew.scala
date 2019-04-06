@@ -52,7 +52,7 @@ case class Stew(ingredients: List[Ingredient]) {
     common.count(_.kind == kind) + rainbows
 
   def count(shell: MysticalShell.type): Int =
-    ingredients.count(_ == MysticalShell)
+    ingredients.count(_ == shell)
 
   def quality: Int = ingredients.map(_.quality).sum
 

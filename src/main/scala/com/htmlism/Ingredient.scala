@@ -30,12 +30,13 @@ case object MysticalShell extends Ingredient {
   val order   = 10
 }
 
-abstract class CommonIngredient(val order: Int,
-                                val color: Color,
-                                val hardness: Hardness,
-                                val size: Size,
-                                val kind: Kind)
-    extends Ingredient {
+abstract class CommonIngredient(
+    val order: Int,
+    val color: Color,
+    val hardness: Hardness,
+    val size: Size,
+    val kind: Kind
+) extends Ingredient {
   def quality: Int =
     size match {
       case Small    => 1

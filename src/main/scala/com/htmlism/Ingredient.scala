@@ -22,12 +22,12 @@ sealed trait Ingredient {
 
 case object RainbowMatter extends Ingredient {
   val quality = 3
-  val order   = 9
+  val order = 9
 }
 
 case object MysticalShell extends Ingredient {
   val quality = 4
-  val order   = 10
+  val order = 10
 }
 
 abstract class CommonIngredient(
@@ -39,17 +39,17 @@ abstract class CommonIngredient(
 ) extends Ingredient {
   def quality: Int =
     size match {
-      case Small    => 1
+      case Small => 1
       case Precious => 2
     }
 }
 
 sealed trait Color
 
-case object Red    extends Color
-case object Blue   extends Color
+case object Red extends Color
+case object Blue extends Color
 case object Yellow extends Color
-case object Grey   extends Color
+case object Grey extends Color
 
 sealed trait Hardness
 
@@ -58,15 +58,15 @@ case object Hard extends Hardness
 
 sealed trait Size
 
-case object Small    extends Size
+case object Small extends Size
 case object Precious extends Size
 
 sealed trait Kind
 
-case object Sweet    extends Kind
-case object Mineral  extends Kind
+case object Sweet extends Kind
+case object Mineral extends Kind
 case object Mushroom extends Kind
-case object Plant    extends Kind
+case object Plant extends Kind
 
 // format: off
 case object TinyMushroom extends CommonIngredient(1, Red,    Soft, Small,    Mushroom)

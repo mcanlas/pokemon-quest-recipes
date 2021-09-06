@@ -22,10 +22,10 @@ object GenerateRecipes {
 
 sealed trait Quality
 
-case object Basic    extends Quality
-case object Good     extends Quality
+case object Basic extends Quality
+case object Good extends Quality
 case object VeryGood extends Quality
-case object Special  extends Quality
+case object Special extends Quality
 
 object Quality {
   val all: List[Quality] =

@@ -19,7 +19,8 @@ object GenerateWebPage {
 
   def print(out: PrintWriter): Unit = {
     val stewsByRecipe =
-      Stew.generate
+      Stew
+        .generate
         .groupBy(recipe)
 
     for (r <- Recipe.all) {

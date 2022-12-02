@@ -15,7 +15,7 @@ sealed trait Gen[A] {
   def gen: List[List[A]]
 }
 
-case class Atom[A](x: A) extends Gen[A] {
+case class Atom[A](x: A)            extends Gen[A] {
   def gen: List[List[A]] =
     List(List(x))
 }

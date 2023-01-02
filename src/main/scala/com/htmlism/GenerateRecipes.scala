@@ -3,7 +3,7 @@ package com.htmlism
 object GenerateRecipes {
   val tups =
     Stew.generate.map { s =>
-      val recipe  =
+      val recipe =
         Classifier.classify(s, Recipe.all).headOption.getOrElse("mulligan")
       val quality = Quality(s.quality)
 

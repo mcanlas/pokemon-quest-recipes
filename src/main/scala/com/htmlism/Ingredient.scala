@@ -1,7 +1,7 @@
 package com.htmlism
 
 import scalaz.Scalaz.intInstance
-import scalaz._
+import scalaz.*
 
 object Ingredient {
   val all: Seq[Ingredient] =

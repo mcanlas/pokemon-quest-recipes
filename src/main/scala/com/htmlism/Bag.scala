@@ -1,6 +1,6 @@
 package com.htmlism
 
-import scalaz._
+import scalaz.*
 
 object Bag {
   def apply[A](x: A*) =

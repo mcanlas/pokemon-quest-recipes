@@ -1,17 +1,8 @@
 package com.htmlism
 
-import scalaz.Scalaz.intInstance
-import scalaz.*
-
 object Ingredient {
   val all: Seq[Ingredient] =
     Seq(TinyMushroom, BlukBerry, Apricorn, Fossil, BigRoot, IcyRock, Honey, BalmMushroom, RainbowMatter, MysticalShell)
-
-  // for some reason, providing `Order[Ingredient]` is not enough to power `TinyMushroom === TinyMushroom`
-  // but this does work `(TinyMushroom: Ingredient) === TinyMushroom`
-  // this provides ordering at every inferred level of the hierarchy, not just `Ingredient`
-  implicit def order[A <: Ingredient]: Order[A] =
-    Order.orderBy(_.order)
 }
 
 sealed trait Ingredient {

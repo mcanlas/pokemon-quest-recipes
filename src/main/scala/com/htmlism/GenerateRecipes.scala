@@ -10,14 +10,13 @@ object GenerateRecipes {
       (s, recipe, quality)
     }
 
-  def main(args: Array[String]): Unit = {
+  def main(args: Array[String]): Unit =
     for (s <- Stew.generate) {
       println(s.ingredients.mkString(", "))
       Classifier.printTable(s)
       println(" - " + Classifier.classify(s, Recipe.all).mkString(", "))
       println()
     }
-  }
 }
 
 sealed trait Quality

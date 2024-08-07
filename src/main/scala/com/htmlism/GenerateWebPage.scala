@@ -23,7 +23,7 @@ object GenerateWebPage {
         .generate
         .groupBy(recipe)
 
-    for (r <- Recipe.all) {
+    for (r <- Recipe.all)
       for (ss <- stewsByRecipe.get(r.name)) {
         val stewsByQuality =
           ss.groupBy(quality)
@@ -45,6 +45,5 @@ object GenerateWebPage {
 
         out.println("<hr>")
       }
-    }
   }
 }

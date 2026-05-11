@@ -2,7 +2,7 @@ package com.htmlism
 
 object Ingredient {
   val all: Seq[Ingredient] =
-    Seq(TinyMushroom, BlukBerry, Apricorn, Fossil, BigRoot, IcyRock, Honey, BalmMushroom, RainbowMatter, MysticalShell)
+    Seq[Ingredient](TinyMushroom, BlukBerry, Apricorn, Fossil, BigRoot, IcyRock, Honey, BalmMushroom, RainbowMatter, MysticalShell)
 }
 
 sealed trait Ingredient {

@@ -63,6 +63,6 @@ case class Stew(ingredients: List[Ingredient]) {
       .toSeq
       .sortBy(_._2)
       .reverse
-      .map { case (i, n) => i + " x" + n }
+      .map { case (i, n) => s"$i x$n" }
       .mkString(", ")
 }

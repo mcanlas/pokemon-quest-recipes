@@ -28,7 +28,7 @@ case object Special  extends Quality
 
 object Quality {
   val all: List[Quality] =
-    List(Basic, Good, VeryGood, Special)
+    List[Quality](Basic, Good, VeryGood, Special)
 
   def apply(n: Int): Quality =
     if (n < 6)

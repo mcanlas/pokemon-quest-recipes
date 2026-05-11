@@ -59,6 +59,7 @@ case class Stew(ingredients: List[Ingredient]) {
   def gravity: String =
     ingredients
       .groupBy(identity)
+      .view
       .mapValues(_.size)
       .toSeq
       .sortBy(_._2)

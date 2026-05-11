@@ -27,7 +27,7 @@ object Classifier {
     header("Mineral")
     header("Mushroom")
     header("Plant")
-    println
+    println()
 
     print(f"${stew.count(Red)}%-9s")
     print(f"${stew.count(Blue)}%-9s")
@@ -41,6 +41,6 @@ object Classifier {
     print(f"${stew.count(Mineral)}%-9s")
     print(f"${stew.count(Mushroom)}%-9s")
     print(f"${stew.count(Plant)}%-9s")
-    println
+    println()
   }
 }
